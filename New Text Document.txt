@@ -8,43 +8,53 @@ class RenaultShowroomList extends React.Component {
       showrooms: [
         {
           name: "Renault Mumbai",
-          address: "Saki Vihar Road, Powai, Mumbai, Maharashtra 400072"
+          address: "Saki Vihar Road, Powai, Mumbai, Maharashtra 400072",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Mumbai"
         },
         {
           name: "Renault Delhi",
-          address: "Plot No 5, Sector - 16, Dwarka, Delhi, 110075"
+          address: "Plot No 5, Sector - 16, Dwarka, Delhi, 110075",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Delhi"
         },
         {
           name: "Renault Chennai",
-          address: "Old Mahabalipuram Rd, Pudupakkam, Tamil Nadu 603103"
+          address: "Old Mahabalipuram Rd, Pudupakkam, Tamil Nadu 603103",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Chennai"
         },
         {
           name: "Renault Kolkata",
-          address: "47, Diamond Harbour Rd, Kolkata, West Bengal 700027"
+          address: "47, Diamond Harbour Rd, Kolkata, West Bengal 700027",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Kolkata"
         },
         {
           name: "Renault Bangalore",
-          address: "45/3, Hosur Road, Electronic City, Bangalore, Karnataka 560100"
+          address: "45/3, Hosur Road, Electronic City, Bangalore, Karnataka 560100",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Bangalore"
         },
         {
           name: "Renault Hyderabad",
-          address: "7-2-1838/1/1, Opposite Country Club, Sardar Patel Road, Secunderabad, Telangana 500003"
+          address: "7-2-1838/1/1, Opposite Country Club, Sardar Patel Road, Secunderabad, Telangana 500003",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Hyderabad"
         },
         {
           name: "Renault Ahmedabad",
-          address: "Ground Floor, Ganesh Meridian, Opposite Kargil Petrol Pump, Ahmedabad, Gujarat 380060"
+          address: "Ground Floor, Ganesh Meridian, Opposite Kargil Petrol Pump, Ahmedabad, Gujarat 380060",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Ahmedabad"
         },
         {
           name: "Renault Pune",
-          address: "S.no. 48/2, Ghorpadi, Pune, Maharashtra 411001"
+          address: "S.no. 48/2, Ghorpadi, Pune, Maharashtra 411001",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Pune"
         },
         {
           name: "Renault Jaipur",
-          address: "Jagdamba Tower, Ajmer Road, Jaipur, Rajasthan 302006"
+          address: "Jagdamba Tower, Ajmer Road, Jaipur, Rajasthan 302006",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Jaipur"
         },
         {
           name: "Renault Lucknow",
-          address: "CP-2, Vikrant Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010"
+          address: "CP-2, Vikrant Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010",
+          mapLink: "https://www.google.com/maps/search/?api=1&query=Renault+Lucknow"
         }
       ]
     };
@@ -54,17 +64,7 @@ class RenaultShowroomList extends React.Component {
     return (
       <div>
         <h1>Renault Showrooms in India</h1>
-        <ul>
+        <div className="row">
           {this.state.showrooms.map((showroom, index) => (
-            <li key={index}>
-              <h2>{showroom.name}</h2>
-              <p>{showroom.address}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
-
-export default RenaultShowroomList;
+            <div key={index} className="col-md-4">
+              <div className="card
