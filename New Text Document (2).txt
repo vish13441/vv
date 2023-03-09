@@ -1,15 +1,19 @@
-    <div className="card-body">
-                  <h5 className="card-title">{showroom.name}</h5>
-                  <p className="card-text">{showroom.address}</p>
-                  <a href={showroom.mapLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">View on Map</a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
+   render() {
+return (
+<div>
+<h1>Renault Showrooms in India</h1>
+<div className="row">
+{this.state.showrooms.map((showroom, index) => (
+<div key={index} className="col-md-4">
+<div className="card">
+<div className="card-body">
 
-export default RenaultShowroomList;
+            <p className="card-text">{showroom.address}</p>
+            <a href={showroom.mapLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">View on Map</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+}
