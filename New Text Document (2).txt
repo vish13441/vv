@@ -1,19 +1,81 @@
-   render() {
-return (
-<div>
-<h1>Renault Showrooms in India</h1>
-<div className="row">
-{this.state.showrooms.map((showroom, index) => (
-<div key={index} className="col-md-4">
-<div className="card">
-<div className="card-body">
+import React from 'react';
 
-            <p className="card-text">{showroom.address}</p>
-            <a href={showroom.mapLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">View on Map</a>
+const dealerships = [
+  {
+    name: "Renault Chennai",
+    address: "No. 63, 100 Feet Road, Jawaharlal Nehru Salai, Vadapalani, Chennai, Tamil Nadu 600026",
+    mapLink: "https://www.google.com/maps/place/Renault+Chennai/"
+  },
+  {
+    name: "Renault Coimbatore",
+    address: "No 68/3, Kamaraj Road, Peelamedu, Coimbatore, Tamil Nadu 641004",
+    mapLink: "https://www.google.com/maps/place/Renault+Coimbatore/"
+  },
+  {
+    name: "Renault Madurai",
+    address: "Plot No 63, N.H.45B, Mattuthavani to Natham Road, Thoppur, Madurai, Tamil Nadu 625005",
+    mapLink: "https://www.google.com/maps/place/Renault+Madurai/"
+  },
+  {
+    name: "Nissan Chennai",
+    address: "146, Velachery Main Rd, Velachery, Chennai, Tamil Nadu 600042",
+    mapLink: "https://www.google.com/maps/place/Nissan+Chennai/"
+  },
+  {
+    name: "Nissan Coimbatore",
+    address: "No. 412/2, Near KMCH Hospital, Avinashi Road, Coimbatore, Tamil Nadu 641014",
+    mapLink: "https://www.google.com/maps/place/Nissan+Coimbatore/"
+  }
+];
+
+function DealershipList() {
+  return (
+    <div>
+      <h2>Renault and Nissan Dealerships in Tamil Nadu</h2>
+      <div className="card-container">
+        {dealerships.map((dealership) => (
+          <div className="card" key={dealership.name}>
+            <h3>{dealership.name}</h3>
+            <p>{dealership.address}</p>
+            <a href={dealership.mapLink}>Map Link</a>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+}
+
+export default DealershipList;
+
+
+
+
+//css
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 10px;
+  width: 300px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+a {
+  display: block;
+  font-size: 0.8em;
 }
