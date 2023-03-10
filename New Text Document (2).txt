@@ -1,67 +1,43 @@
-import React, { useState } from 'react';
-import './TestDriveForm.css';
-
-function TestDriveForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [carModel, setCarModel] = useState('Choose a car model');
-  const carModels = ['Model 1', 'Model 2', 'Model 3', 'Model 4'];
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // handle form submission here
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Phone:', phone);
-    console.log('Car Model:', carModel);
-    alert('Thank you for your interest in a test drive! We will be in touch shortly.');
-  };
-
-  return (
-    <form className="test-drive-form" onSubmit={handleSubmit}>
-      <h2>Test Drive Request</h2>
-      <div className="form-group">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="phone">Phone:</label>
-        <input
-          type="tel"
-          id="phone"
-          value={phone}
-          onChange={(event) => setPhone(event.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="carModel">Car Model:</label>
-        <select id="carModel" value={carModel} onChange={(event) => setCarModel(event.target.value)}>
-          <option disabled>Choose a car model</option>
-          {carModels.map((model) => (
-            <option key={model} value={model}>
-              {model}
-            </option>
-          ))}
-        </select>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-  );
+.test-drive-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-export default TestDriveForm;
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
