@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import './TestDriveForm.css';
 
 function TestDriveForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [carModel, setCarModel] = useState('');
+  const [carModel, setCarModel] = useState('Choose a car model');
+  const carModels = ['Model 1', 'Model 2', 'Model 3', 'Model 4'];
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,8 +19,9 @@ function TestDriveForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className="test-drive-form" onSubmit={handleSubmit}>
+      <h2>Test Drive Request</h2>
+      <div className="form-group">
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -27,7 +30,7 @@ function TestDriveForm() {
           onChange={(event) => setName(event.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -36,7 +39,7 @@ function TestDriveForm() {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="phone">Phone:</label>
         <input
           type="tel"
@@ -45,14 +48,16 @@ function TestDriveForm() {
           onChange={(event) => setPhone(event.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="carModel">Car Model:</label>
-        <input
-          type="text"
-          id="carModel"
-          value={carModel}
-          onChange={(event) => setCarModel(event.target.value)}
-        />
+        <select id="carModel" value={carModel} onChange={(event) => setCarModel(event.target.value)}>
+          <option disabled>Choose a car model</option>
+          {carModels.map((model) => (
+            <option key={model} value={model}>
+              {model}
+            </option>
+          ))}
+        </select>
       </div>
       <button type="submit">Submit</button>
     </form>
