@@ -1,43 +1,8 @@
-.test-drive-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+  const backgroundStyle = {
+    backgroundImage: `url("https://example.com/background-image.jpg")`,
+    backgroundSize: "cover",
+    height: "100vh",
+  };
 
-.form-group {
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input,
-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-button[type="submit"] {
-  display: block;
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #0069d9;
-}
+<div style={backgroundStyle}>
+      <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
