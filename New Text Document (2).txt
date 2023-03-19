@@ -1,8 +1,2 @@
-  const backgroundStyle = {
-    backgroundImage: `url("https://example.com/background-image.jpg")`,
-    backgroundSize: "cover",
-    height: "100vh",
-  };
-
-<div style={backgroundStyle}>
-      <div style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}>
+@Query("SELECT p FROM Parent p JOIN p.children c WHERE p.parentColumn LIKE %:searchString% OR c.childColumn LIKE %:searchString%")
+List<Parent> searchByParentOrChildColumn(@Param("searchString") String searchString);
